@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file datatype="php" original="system/modules/form-generator-extensions/languages/en/tl_form.php" source-language="en">
+        <body>
+            <trans-unit id="tl_form.sender.0">
+                <source>Sender email</source>
+            </trans-unit>
+            <trans-unit id="tl_form.sender.1">
+                <source>Please enter the sender e-mail address.</source>
+            </trans-unit>
+            <trans-unit id="tl_form.senderName.0">
+                <source>Sender name</source>
+            </trans-unit>
+            <trans-unit id="tl_form.senderName.1">
+                <source>Please enter the sender's full name.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
