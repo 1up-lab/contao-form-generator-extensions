@@ -3,7 +3,6 @@
 namespace Oneup\Contao\FormGeneratorExtensions\EventListener;
 
 use Contao\Config;
-use Contao\StringUtil;
 
 class FormListener
 {
@@ -23,9 +22,20 @@ class FormListener
         global $objPage;
 
         if ($objPage->adminEmail !== ''){
-            list($GLOBALS['TL_ADMIN_NAME'], $GLOBALS['TL_ADMIN_EMAIL']) = StringUtil::splitFriendlyEmail($objPage->adminEmail);
+            list($GLOBALS['TL_ADMIN_NAME'], $GLOBALS['TL_ADMIN_EMAIL']) = $this->splitFriendlyEmail($objPage->adminEmail);
         } else {
-            list($GLOBALS['TL_ADMIN_NAME'], $GLOBALS['TL_ADMIN_EMAIL']) = StringUtil::splitFriendlyEmail(Config::get('adminEmail'));
+            list($GLOBALS['TL_ADMIN_NAME'], $GLOBALS['TL_ADMIN_EMAIL']) = $this->splitFriendlyEmail(Config::get('adminEmail'));
+        }
+    }
+
+    protected function splitFriendlyEmail($email)
+    {
+        // Use StringUtil class when used Contao version is minimum 3.5.1
+        // see https://github.com/contao/core-bundle/issues/309
+        if (version_compare(VERSION .'.'.BUILD, '3.5.1', '<')) {
+            return \String::splitFriendlyEmail($email);
+        } else {
+            return \StringUtil::splitFriendlyEmail($email);
         }
     }
 }
