@@ -7,6 +7,6 @@ Contao Form Generator Extensions
 
 This Contao extension extends the core form generator with some additonal fields.
 
-You can now choose which is the sender (email and name) instead of the global page admin email for every single form.
+You can now choose which is the sender (email and name) for every single form instead of the global page admin email.
 
 ![New form fields](https://cloud.githubusercontent.com/assets/754921/14882765/a5ca457a-0d3a-11e6-80ec-0f535981cfa9.png)
